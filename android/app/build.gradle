@@ -1,6 +1,6 @@
 plugins {
     id "com.android.application"
-    id "kotlin-android"
+    // Kita hapus 'kotlin-android' agar tidak error
     id "dev.flutter.flutter-gradle-plugin"
 }
 
@@ -32,17 +32,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
+    // Bagian KotlinOptions KITA HAPUS karena sudah pakai Java
 
     defaultConfig {
         applicationId "com.example.elok"
-        minSdk 23 // Penting untuk Notification Listener
+        minSdk 23
         targetSdk 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
